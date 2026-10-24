@@ -20,11 +20,12 @@ on:
         description: "自定义版本名 (可选)"
         required: false
         type: string
+        default: "-android14-11-g0c3d559bcd85-ab14529422"
       build_time:
         description: "自定义构建时间 (留空=自动获取当前北京时间) (示例 Sun Dec  1 08:10:00 UTC 2026)"
         required: false
         type: string
-        default: ""
+        default: "Wed Dec  3 02:05:30 UTC 2025"
       use_kpm:
         description: "KPM 功能（仅SukiSU支持）"
         required: true
@@ -100,10 +101,11 @@ on:
       version:
         required: false
         type: string
+        default: "-android14-11-g0c3d559bcd85-ab14529422"
       build_time:
         required: false
         type: string
-        default: ""
+        default: "Wed Dec  3 02:05:30 UTC 2025"
       use_zram:
         required: true
         type: boolean
@@ -177,57 +179,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - sub_level: "25"
-            os_patch_level: "2023-10"
-          - sub_level: "43"
-            os_patch_level: "2023-11"
-          - sub_level: "57"
-            os_patch_level: "2024-01"
-          - sub_level: "68"
-            os_patch_level: "2024-03"
-          - sub_level: "75"
-            os_patch_level: "2024-05"
-          - sub_level: "78"
-            os_patch_level: "2024-06"
-          - sub_level: "84"
-            os_patch_level: "2024-07"
-          - sub_level: "90"
-            os_patch_level: "2024-08"
-          - sub_level: "93"
-            os_patch_level: "2024-09"
-          - sub_level: "99"
-            os_patch_level: "2024-10"
-          - sub_level: "112"
-            os_patch_level: "2024-11"
-          - sub_level: "115"
-            os_patch_level: "2024-12"
-          - sub_level: "118"
-            os_patch_level: "2025-01"
-          - sub_level: "124"
-            os_patch_level: "2025-02"
-          - sub_level: "128"
-            os_patch_level: "2025-03"
-          - sub_level: "129"
-            os_patch_level: "2025-04"
-          - sub_level: "134"
-            os_patch_level: "2025-05"
           - sub_level: "138"
             os_patch_level: "2025-06"
-          - sub_level: "141"
-            os_patch_level: "2025-07"
-          - sub_level: "145"
-            os_patch_level: "2025-09"
-          - sub_level: "157"
-            os_patch_level: "2025-12"
-          - sub_level: "162"
-            os_patch_level: "2026-03"
-          - sub_level: "172"
-            os_patch_level: "2026-06"
-          - sub_level: "176"
-            os_patch_level: "2026-09"
-          - sub_level: "X"
-            os_patch_level: "lts"
-            display_sub: "177"
     uses: ./.github/workflows/build.yml
     secrets: inherit
     with:
